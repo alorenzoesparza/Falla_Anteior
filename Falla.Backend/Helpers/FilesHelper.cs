@@ -11,7 +11,11 @@
 
     public class FilesHelper
     {
-        public static string UploadPhotoBackEnd(HttpPostedFileBase file, string folder, string name)
+        public static string UploadPhotoBackEnd(HttpPostedFileBase file, 
+            string folder, 
+            string name, 
+            int iWidth, 
+            int iHeight)
         {
 
             if (file == null || string.IsNullOrEmpty(folder) || string.IsNullOrEmpty(name))
@@ -45,8 +49,8 @@
                         byte[] array = ms.GetBuffer();
                     }
                     var newName = Path.Combine(HttpContext.Current.Server.MapPath(folder), name);
-                    // Redimensionar la imagen a un maximo de 200px por 200 px
-                    var newImagenName = ResizeImage(path, newName, 200, 200);
+                    // Redimensionar la imagen 
+                    var newImagenName = ResizeImage(path, newName, iWidth, iHeight);
                     return newImagenName;
                 }
                 else
@@ -60,7 +64,10 @@
             }
         }
 
-        public static string ResizeImage(string strImgPath, string strImgOutputPath, int iWidth, int iHeight)
+        public static string ResizeImage(string strImgPath, 
+            string strImgOutputPath, 
+            int iWidth, 
+            int iHeight)
         {
             try
             {

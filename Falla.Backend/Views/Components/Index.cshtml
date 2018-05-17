@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Falla.Domain.Component>
+
+@{
+    ViewBag.Title = "Nuevo";
+}
+
+<h2>Componentes</h2>
+
+<p>
+    @Html.ActionLink("Nuevo", "Create", new { }, new { @class = "btn btn-primary" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FullName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Telephone)
+        </th>
+        <th>
+            Foto
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FullName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Telephone)
+        </td>
+        <td>
+            @if (!string.IsNullOrEmpty(item.Foto))
+            {
+                <img src="@Url.Content(item.Foto)" alt="Image" style="width:100px;height:150px;max-width: 100%; height: auto;" />
+            }
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id = item.ComponentId }, new { @class = "btn btn-info" }) |
+            @Html.ActionLink("Detalle", "Details", new { id = item.ComponentId }, new { @class = "btn btn-warning" }) |
+            @Html.ActionLink("Borrar", "Delete", new { id = item.ComponentId }, new { @class = "btn btn-danger" })
+        </td>
+    </tr>
+}
+
+</table>

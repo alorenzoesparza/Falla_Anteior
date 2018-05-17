@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Falla.Android", "Falla\Fall
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Falla.iOS", "Falla\Falla.iOS\Falla.iOS.csproj", "{E51A072D-E064-478D-83BD-72579ECAD6DA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Falla", "Falla\Falla\Falla.csproj", "{67EE5ACF-5B35-4EF0-81E0-5BBF31C34C23}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Falla", "Falla\Falla\Falla.csproj", "{67EE5ACF-5B35-4EF0-81E0-5BBF31C34C23}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Falla.Backend", "Falla.Backend\Falla.Backend.csproj", "{2E513AB8-3C23-4A6E-919B-EF02F26A2BB1}"
 EndProject

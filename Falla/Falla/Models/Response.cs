@@ -1,5 +1,5 @@
 ﻿namespace Falla
-{ 
+{
     public class Response
     {
         public bool IsSuccess
